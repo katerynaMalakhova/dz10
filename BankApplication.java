@@ -20,6 +20,8 @@ public class BankApplication {
 
     public void process(String accountId, int amount, String currency) throws Exception {
 
+        System.out.printf("Process for account %s, amount %d, currency %s\n", accountId, amount, currency);
+
         accounts.stream().filter(account -> account.getId().equals(accountId))
                 .findAny().orElseThrow(WrongAccountException::new);
 
